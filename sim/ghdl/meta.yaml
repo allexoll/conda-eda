@@ -22,7 +22,6 @@ requirements:
     - {{ compiler('c') }}       [linux]
     - {{ compiler('cxx') }}     [linux]
     - make                      [not win]
-    - gnat                      [not win]
     - m2-bash                   [win]
     - m2-make                   [win]
     - m2w64-gcc                 [win]
