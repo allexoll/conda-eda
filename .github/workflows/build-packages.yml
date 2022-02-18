@@ -8,10 +8,12 @@ on:
     paths-ignore:
       - '.github/workflows/tuttest.yml'
       - 'README.md'
+      - 'DEVELOPMENT.md'
   pull_request:
     paths-ignore:
       - '.github/workflows/tuttest.yml'
       - 'README.md'
+      - 'DEVELOPMENT.md'
   workflow_dispatch:
   schedule:
     - cron: '0 23 * * *' # run daily at 23:00 (UTC)
@@ -346,7 +348,7 @@ jobs:
     env:
       PACKAGE: "xilinx/vivado"
       OS_NAME: "linux"
-      VERSIONS: ${{ format('{0}{1}', github.workspace, '/xilinx/vivado/versions') }} 
+      VERSIONS: ${{ format('{0}{1}', github.workspace, '/xilinx/vivado/versions') }}
       SCRIPT: ${{ format('{0}{1}', github.workspace, '/xilinx/vivado/gen_metapackages.sh') }}
     steps:
       - uses: actions/checkout@v2
@@ -535,7 +537,7 @@ jobs:
   #48
   nextpnr-ice40-windows:
     runs-on: "windows-2016"
-    needs: ["icestorm-windows"] 
+    needs: ["icestorm-windows"]
     env:
       PACKAGE: "pnr/nextpnr/ice40"
       OS_NAME: "windows"
