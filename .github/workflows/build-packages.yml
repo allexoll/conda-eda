@@ -81,7 +81,7 @@ jobs:
       PACKAGE: "bit/prjxray-tools"
       OS_NAME: "linux"
     steps:
-      - uses: actions/checkout
+      - uses: actions/checkout@v2
       - uses: dbhi/qus/action@main
         with:
           targets: aarch64
