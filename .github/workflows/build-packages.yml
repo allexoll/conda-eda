@@ -21,7 +21,7 @@ env:
   NUM_OF_JOBS: 68
 defaults:
   run:
-    shell: bash
+    shell: run.sh
 jobs:
 
   # #1
@@ -206,10 +206,10 @@ jobs:
       PACKAGE: "pnr/vtr-optimized"
       OS_NAME: "linux"
     steps:
+      - uses: actions/checkout@v2
       - uses: dbhi/qus/action@main
         with:
-          targets: x86_64 aarch64
-      - uses: actions/checkout@v2
+          targets: aarch64
       - uses: allexoll/conda-ci@master
 
   # #19
