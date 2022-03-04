@@ -21,7 +21,7 @@ env:
   NUM_OF_JOBS: 68
 defaults:
   run:
-    shell: run.sh
+    shell: bash
 jobs:
 
   # #1
@@ -211,6 +211,8 @@ jobs:
         with:
           targets: aarch64
       - uses: allexoll/conda-ci@master
+      run:
+        shell: setup.sh aarch64
 
   # #19
   # symbiflow-vtr-linux:
