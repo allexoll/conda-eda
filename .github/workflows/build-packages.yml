@@ -74,16 +74,19 @@ jobs:
   #     - uses: actions/checkout@v2
   #     - uses: allexoll/conda-ci@master
 
-  # #6
-  # prjxray-tools-linux:
-  #   runs-on: "ubuntu-20.04"
-  #   env:
-  #     PACKAGE: "bit/prjxray-tools"
-  #     OS_NAME: "linux"
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: allexoll/conda-ci@master
-
+  #6
+  prjxray-tools-linux:
+    runs-on: "ubuntu-20.04"
+    env:
+      PACKAGE: "bit/prjxray-tools"
+      OS_NAME: "linux"
+    steps:
+      - uses: actions/checkout
+      - uses: dbhi/qus/action@main
+        with:
+          targets: aarch64
+      - shell: bash
+        run: docker run --rm --privileged  --platform=linux/arm64 gcr.io/hdl-containers/arm64v8/conda
   # #7
   # icarus-linux:
   #   runs-on: "ubuntu-20.04"
@@ -200,18 +203,18 @@ jobs:
   #     - uses: allexoll/conda-ci@master
 
   #18
-  vtr-optimized-linux:
-    runs-on: "ubuntu-20.04"
-    env:
-      PACKAGE: "pnr/vtr-optimized"
-      OS_NAME: "linux"
-    steps:
-      - uses: actions/checkout@v2
-      - uses: dbhi/qus/action@main
-        with:
-          targets: aarch64
-      - uses: allexoll/conda-ci@master
-      - run: setup.sh aarch64
+  # vtr-optimized-linux:
+  #   runs-on: "ubuntu-20.04"
+  #   env:
+  #     PACKAGE: "pnr/vtr-optimized"
+  #     OS_NAME: "linux"
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: dbhi/qus/action@main
+  #       with:
+  #         targets: aarch64
+  #     - uses: allexoll/conda-ci@master
+  #     - run: setup.sh aarch64
 
   # #19
   # symbiflow-vtr-linux:
