@@ -211,8 +211,7 @@ jobs:
         with:
           targets: aarch64
       - uses: allexoll/conda-ci@master
-      run:
-        shell: setup.sh aarch64
+      - run: setup.sh aarch64
 
   # #19
   # symbiflow-vtr-linux:
