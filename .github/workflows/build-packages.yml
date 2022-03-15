@@ -84,6 +84,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: dbhi/qus/action@main
       - uses: allexoll/conda-ci@master
+        with:
+          arch: aarch64
 
   # #7
   # icarus-linux:
